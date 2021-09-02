@@ -333,7 +333,13 @@ describe('Design Forms using Data Dictionary & Online Designer', () => {
 						})
 
 						it('Should automatically populate raw values for choices', () => {
+							cy.get('table#design-new_drop_down').within(() => {
+								cy.get('img[title="Edit"]').click()
+							})
 
+							cy.get('textarea#element_enum').type('option 1')	
+							cy.get('textarea#field_label').click()
+							cy.pause()
 						})
 					})
 
